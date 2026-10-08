@@ -1,0 +1,44 @@
+# Simulator output / generated build files
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.vcd
+*.fst
+*.fsdb
+*.ucdb
+*.vpd
+*.key
+xsim.dir/
+xsim_*.backup/
+.Xil/
+vivado*.log
+vivado*.jou
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+work/
+transcript
+vsim.wlf
+csrc/
+simv
+simv.daidir/
+INCA_libs/
+xcelium.d/
+cov_work/
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Keep placeholder folders in Git; real generated binaries should be reviewed before committing.
