@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-//--------------------------------------------------------------------------
 // Register bank storage and decoding logic
-//--------------------------------------------------------------------------
+
 module axi4lite_reg_bank #(
     parameter ADDR_WIDTH = 32,
     parameter [31:0] VERSION_VALUE = 32'h0001_0000
@@ -43,9 +42,7 @@ module axi4lite_reg_bank #(
     wire [31:0] status_val  = 32'h0000_0001;
     wire [31:0] version_val = VERSION_VALUE;
 
-    //--------------------------------------------------------------------------
     // Helpers
-    //--------------------------------------------------------------------------
     // WSTRB: one bit per byte lane. A set bit takes the new byte, a clear bit keeps the old byte. WSTRB = 0000 leaves the register unchanged.
     function [31:0] apply_strb;
         input [31:0] old_v;

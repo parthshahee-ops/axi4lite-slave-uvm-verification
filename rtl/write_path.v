@@ -1,10 +1,9 @@
 `timescale 1ns / 1ps
-//==========================================================================
 // WRITE PATH
 // AW and W are independent channels. Each is captured when its own VALID/READY 
 // handshake occurs; the write is executed only after both halves are available. 
 // This handles AW-first, W-first, and AW+W in the same cycle.
-//==========================================================================
+
 module axi4lite_write #(
     parameter ADDR_WIDTH = 32
 )(

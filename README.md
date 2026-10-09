@@ -1,39 +1,59 @@
-# AXI4-Lite Slave Verification using SystemVerilog & UVM
+# AXI4-Lite Slave Verification using SystemVerilog and UVM
 
-A 32-bit AXI4-Lite slave and UVM-based verification project developed and simulated in AMD/Xilinx Vivado Simulator (XSim).
-
-## Verified from the supplied simulation records
-
-The latest recorded `run all` regression reports:
-
-- 1,000 transactions; 1,000 passed; 0 failed.
-- 0 UVM errors, warnings, or fatals in the regression summary.
-- 100.00% reported **functional coverage** for the project's listed coverpoints.
-- The simulator log shows successful writes and read-backs, `OKAY` responses for mapped accesses, `SLVERR` for tested read-only writes, invalid addresses and an unaligned address, and byte-lane updates for several WSTRB patterns.
-
-See [`results/RESULTS.md`](results/RESULTS.md) for the detailed evidence and limitations. These are functional-coverage results reported by the testbench, not code-coverage results.
-
-## Tools indicated by the logs
-
-- AMD/Xilinx Vivado 2026.1
-- XSim behavioral simulator
-- UVM 1.2
-- Simulation top: `tb_top`
-
-## RTL / testbench structure observed in the compile log
-
-The compile log names these modules: `axi4lite_write`, `axi4lite_read`, `axi4lite_reg_bank`, `axi4lite_slave_top`, and `tb_top`. It also identifies `axi4lite_if.sv`, `tb_top.sv`, `axi4lite_test.sv`, `axi4lite_driver.sv`, and `axi4lite_sequence.sv` in compile/runtime messages.
-
-**Important:** This ZIP is a documentation-and-results overlay, not a source-code archive. The uploaded material included simulation logs and phase notes, but not the actual `.v` / `.sv` source files. Those source files must be copied from the Vivado project into `rtl/` and `tb/` before this repository can be independently rebuilt. See [`docs/SOURCE_IMPORT_CHECKLIST.md`](docs/SOURCE_IMPORT_CHECKLIST.md).
+This repository contains the RTL for an AXI4-Lite slave, a flat SystemVerilog/UVM testbench, project documentation, and captured simulation evidence.
 
 ## Repository layout
 
-- `rtl/` — place the actual synthesizable Verilog source files here.
-- `tb/uvm/` — place the actual UVM classes here.
-- `docs/` — phase notes, build information and source-import checklist.
-- `results/` — summarized results from the supplied simulation log.
-- `sim/logs/` — sanitized XSim log record.
+```text
+axi4lite-slave-uvm-verification/
+├── README.md
+├── rtl/
+│   ├── top_module.v
+│   ├── read_path.v
+│   ├── write_path.v
+│   └── register_bank.v
+├── tb/
+│   ├── axi4lite_if.sv
+│   ├── tb_top.sv
+│   ├── axi4lite_seq_item.sv
+│   ├── axi4lite_sequence.sv
+│   ├── axi4lite_sequencer.sv
+│   ├── axi4lite_driver.sv
+│   ├── axi4lite_monitor.sv
+│   ├── axi4lite_agent.sv
+│   ├── axi4lite_env.sv
+│   ├── axi4lite_scoreboard.sv
+│   └── axi4lite_test.sv
+├── docs/
+│   ├── AXI-4_Lite_Project_Notes.docx
+│   ├── AXI4-Lite_Slave_Verification_Report.md
+│   ├── gemini_review.md
+│   └── chatgpt_review.md
+└── results/
+    ├── logs.txt
+    └── waveform screenshots
+```
 
-## Reproduce the simulation
+## Contents
 
-Open the original Vivado project and run behavioral simulation with `tb_top` as the simulation top. Exact compile scripts, project files and the source tree were not included in the uploaded logs, so this repository does not yet provide a standalone command-line reproduction flow.
+- `rtl/`: AXI4-Lite slave RTL.
+- `tb/`: UVM interface, testbench top, transaction, sequence, sequencer, driver, monitor, agent, environment, scoreboard, and test.
+- `docs/`: original design notes and review/report documents.
+- `results/`: supplied simulation logs and waveform screenshots.
+
+## Running the simulation
+
+The supplied log indicates the project was simulated with AMD/Xilinx Vivado XSim and UVM 1.2. To rerun, create or open a Vivado project, add the four RTL files as design sources and all files in `tb/` as simulation sources, ensure UVM 1.2 is enabled, and select `tb_top` as the simulation top.
+
+The exact source ordering and simulator setup may need to be configured in Vivado. No project-specific Vivado project file or portable simulator script was supplied in this upload.
+
+## Interpreting results
+
+`results/logs.txt` preserves the uploaded phase-wise output. The waveforms are visual evidence for channel handshakes and write execution. Treat the log as the record of the runs it contains; do not infer that every scenario described in the report was run successfully unless the log explicitly demonstrates it.
+
+The detailed report and review files are preserved as supplied. Some sections may contain template fields or verification claims that should be reconciled against the actual source and run logs before being used as sign-off evidence.
+
+## Notes
+
+- Source files were renamed to remove upload suffixes such as `(1)`; the source contents were not intentionally rewritten.
+- This package is a source-and-evidence bundle, not a generated Vivado project.

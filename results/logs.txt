@@ -1,0 +1,992 @@
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Fri Oct  9 02:47:11 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/axi4lite_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/tb_top.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:10]
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:10]
+WARNING: [VRFC 10-3120] argument name 'rm' for virtual method 'compose_report_message' in subclass 'clean_report_server' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:10]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_axi4lite_if_sv_211797780
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.axi4lite_if_default
+Compiling module xil_defaultlib.axi4lite_write
+Compiling module xil_defaultlib.axi4lite_read
+Compiling module xil_defaultlib.axi4lite_reg_bank
+Compiling module xil_defaultlib.axi4lite_slave_top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:12 ; elapsed = 00:02:34 . Memory (MB): peak = 1747.496 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '154' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE UVM VERIFICATION
+============================================================
+
+[TEST] Starting sanity test
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(39) @ 35000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE transaction: ADDR=0x00000008 DATA=0xdeadbeef
+[WRITE] ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  Write transaction
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(39) @ 65000: uvm_test_top.env.agent.driver [DRIVER] Driving READ transaction: ADDR=0x00000008 DATA=0xcf9d31b9
+[READ ] ADDR=0x00000008
+[READ ] DATA=0xdeadbeef RRESP=OKAY
+[PASS]  Read transaction
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_sequence.sv(57) @ 95000: uvm_test_top.env.agent.sequencer@@seq [axi4lite_sanity_seq] Sanity sequence generation completed
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 95000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+------------------------------------------------------------
+RESULT: PASS
+ERRORS: 0
+WARNINGS: 0
+------------------------------------------------------------
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 95000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   13
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CLEAN]     6
+[DRIVER]     2
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+[axi4lite_sanity_seq]     1
+
+$finish called at time : 95 ns : File "C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:20 ; elapsed = 00:02:43 . Memory (MB): peak = 1755.312 ; gain = 7.816
+
+
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Fri Oct  9 02:51:53 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/axi4lite_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/tb_top.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+WARNING: [VRFC 10-3120] argument name 'rm' for virtual method 'compose_report_message' in subclass 'clean_report_server' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_axi4lite_if_sv_211797780
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.axi4lite_if_default
+Compiling module xil_defaultlib.axi4lite_write
+Compiling module xil_defaultlib.axi4lite_read
+Compiling module xil_defaultlib.axi4lite_reg_bank
+Compiling module xil_defaultlib.axi4lite_slave_top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:08 ; elapsed = 00:02:24 . Memory (MB): peak = 1757.605 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '144' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE UVM VERIFICATION
+============================================================
+
+[TEST] Starting sanity test
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 35000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000008 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 65000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000008
+[READ ] ADDR=0x00000008
+[READ ] DATA=0xdeadbeef RRESP=OKAY
+[PASS]  READ  ADDR=0x00000008 DATA=0xdeadbeef RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_sequence.sv(57) @ 95000: uvm_test_top.env.agent.sequencer@@seq [axi4lite_sanity_seq] Sanity sequence generation completed
+
+[TEST] Sanity test completed
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 95000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+------------------------------------------------------------
+RESULT: PASS
+ERRORS: 0
+WARNINGS: 0
+------------------------------------------------------------
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 95000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   14
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CLEAN]     7
+[DRIVER]     2
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+[axi4lite_sanity_seq]     1
+
+$finish called at time : 95 ns : File "C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+xsim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1757.871 ; gain = 0.266
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:02:33 . Memory (MB): peak = 1757.871 ; gain = 0.266
+
+
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Fri Oct  9 03:15:04 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/axi4lite_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/tb_top.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'rm' for virtual method 'compose_report_message' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+WARNING: [VRFC 10-3120] argument name 'rm' for virtual method 'compose_report_message' in subclass 'clean_report_server' does not match the argument name 'report_message' in superclass [../../../../../../Downloads/AXI_Project/sv_files/axi4lite_test.sv:8]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_axi4lite_if_sv_211797780
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.axi4lite_if_default
+Compiling module xil_defaultlib.axi4lite_write
+Compiling module xil_defaultlib.axi4lite_read
+Compiling module xil_defaultlib.axi4lite_reg_bank
+Compiling module xil_defaultlib.axi4lite_slave_top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:01:21 . Memory (MB): peak = 1759.957 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '81' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE REGISTER TEST
+============================================================
+
+------------------------------------------------------------
+[1] CONTROL
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 35000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000000 DATA=0x12345678 STRB=1111
+[WRITE] ADDR=0x00000000 DATA=0x12345678 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000000 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 65000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000000
+[READ ] ADDR=0x00000000
+[READ ] DATA=0x12345678 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000000 DATA=0x12345678 RESP=  OKAY
+
+------------------------------------------------------------
+[2] DATA_IN
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 95000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000008 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 125000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000008
+[READ ] ADDR=0x00000008
+[READ ] DATA=0xdeadbeef RRESP=OKAY
+[PASS]  READ  ADDR=0x00000008 DATA=0xdeadbeef RESP=  OKAY
+
+------------------------------------------------------------
+[3] DATA_OUT
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 155000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000000c DATA=0xcafef00d STRB=1111
+[WRITE] ADDR=0x0000000c DATA=0xcafef00d STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000000c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 185000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000000c
+[READ ] ADDR=0x0000000c
+[READ ] DATA=0xcafef00d RRESP=OKAY
+[PASS]  READ  ADDR=0x0000000c DATA=0xcafef00d RESP=  OKAY
+
+------------------------------------------------------------
+[4] CONFIG
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 215000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000010 DATA=0xa5a55a5a STRB=1111
+[WRITE] ADDR=0x00000010 DATA=0xa5a55a5a STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000010 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 245000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000010
+[READ ] ADDR=0x00000010
+[READ ] DATA=0xa5a55a5a RRESP=OKAY
+[PASS]  READ  ADDR=0x00000010 DATA=0xa5a55a5a RESP=  OKAY
+
+------------------------------------------------------------
+[5] SCRATCH
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 275000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x55aaaa55 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x55aaaa55 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 305000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x55aaaa55 RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x55aaaa55 RESP=  OKAY
+
+------------------------------------------------------------
+[6] STATUS - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 335000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000004
+[READ ] ADDR=0x00000004
+[READ ] DATA=0x00000001 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000004 DATA=0x00000001 RESP=  OKAY
+
+------------------------------------------------------------
+[7] COUNT - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 365000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000014
+[READ ] ADDR=0x00000014
+[READ ] DATA=0x00000005 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000014 DATA=0x00000005 RESP=  OKAY
+
+------------------------------------------------------------
+[8] VERSION - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 395000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000018
+[READ ] ADDR=0x00000018
+[READ ] DATA=0x00010000 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000018 DATA=0x00010000 RESP=  OKAY
+
+------------------------------------------------------------
+[9] RO WRITE PROTECTION
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 425000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000004 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000004 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000004 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 455000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000014 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000014 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000014 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 485000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000018 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000018 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000018 RESP=SLVERR
+
+------------------------------------------------------------
+[10] INVALID ADDRESS
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 515000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000020 DATA=0xbadc0ffe STRB=1111
+[WRITE] ADDR=0x00000020 DATA=0xbadc0ffe STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000020 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 545000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000020
+[READ ] ADDR=0x00000020
+[READ ] DATA=0x00000000 RRESP=SLVERR
+[PASS]  READ  ADDR=0x00000020 DATA=0x00000000 RESP=SLVERR
+
+------------------------------------------------------------
+[11] MISALIGNED ADDRESS
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 575000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000002 DATA=0xbadc0ffe STRB=1111
+[WRITE] ADDR=0x00000002 DATA=0xbadc0ffe STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000002 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 605000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000002
+[READ ] ADDR=0x00000002
+[READ ] DATA=0x00000000 RRESP=SLVERR
+[PASS]  READ  ADDR=0x00000002 DATA=0x00000000 RESP=SLVERR
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 635000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+------------------------------------------------------------
+RESULT: PASS
+ERRORS: 0
+WARNINGS: 0
+------------------------------------------------------------
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 635000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   77
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CLEAN]    53
+[DRIVER]    20
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 635 ns : File "C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:01:26 . Memory (MB): peak = 1796.031 ; gain = 36.074
+
+
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Fri Oct  9 03:26:59 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/axi4lite_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Hp/Downloads/AXI_Project/sv_files/tb_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_axi4lite_if_sv_211797780
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.axi4lite_if_default
+Compiling module xil_defaultlib.axi4lite_write
+Compiling module xil_defaultlib.axi4lite_read
+Compiling module xil_defaultlib.axi4lite_reg_bank
+Compiling module xil_defaultlib.axi4lite_slave_top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:01:23 . Memory (MB): peak = 1796.031 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '83' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Hp/Desktop/AXI-4/AXI-4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE REGISTER TEST (PHASE 1)
+============================================================
+
+------------------------------------------------------------
+[1] CONTROL
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 35000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000000 DATA=0x12345678 STRB=1111
+[WRITE] ADDR=0x00000000 DATA=0x12345678 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000000 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 65000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000000
+[READ ] ADDR=0x00000000
+[READ ] DATA=0x12345678 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000000 DATA=0x12345678 RESP=  OKAY
+
+------------------------------------------------------------
+[2] DATA_IN
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 95000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] ADDR=0x00000008 DATA=0xdeadbeef STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000008 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 125000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000008
+[READ ] ADDR=0x00000008
+[READ ] DATA=0xdeadbeef RRESP=OKAY
+[PASS]  READ  ADDR=0x00000008 DATA=0xdeadbeef RESP=  OKAY
+
+------------------------------------------------------------
+[3] DATA_OUT
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 155000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000000c DATA=0xcafef00d STRB=1111
+[WRITE] ADDR=0x0000000c DATA=0xcafef00d STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000000c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 185000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000000c
+[READ ] ADDR=0x0000000c
+[READ ] DATA=0xcafef00d RRESP=OKAY
+[PASS]  READ  ADDR=0x0000000c DATA=0xcafef00d RESP=  OKAY
+
+------------------------------------------------------------
+[4] CONFIG
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 215000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000010 DATA=0xa5a55a5a STRB=1111
+[WRITE] ADDR=0x00000010 DATA=0xa5a55a5a STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x00000010 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 245000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000010
+[READ ] ADDR=0x00000010
+[READ ] DATA=0xa5a55a5a RRESP=OKAY
+[PASS]  READ  ADDR=0x00000010 DATA=0xa5a55a5a RESP=  OKAY
+
+------------------------------------------------------------
+[5] SCRATCH
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 275000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x55aaaa55 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x55aaaa55 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 305000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x55aaaa55 RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x55aaaa55 RESP=  OKAY
+
+------------------------------------------------------------
+[6] STATUS - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 335000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000004
+[READ ] ADDR=0x00000004
+[READ ] DATA=0x00000001 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000004 DATA=0x00000001 RESP=  OKAY
+
+------------------------------------------------------------
+[7] COUNT - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 365000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000014
+[READ ] ADDR=0x00000014
+[READ ] DATA=0x00000005 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000014 DATA=0x00000005 RESP=  OKAY
+
+------------------------------------------------------------
+[8] VERSION - READ ONLY
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 395000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000018
+[READ ] ADDR=0x00000018
+[READ ] DATA=0x00010000 RRESP=OKAY
+[PASS]  READ  ADDR=0x00000018 DATA=0x00010000 RESP=  OKAY
+
+------------------------------------------------------------
+[9] RO WRITE PROTECTION
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 425000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000004 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000004 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000004 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 455000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000014 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000014 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000014 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 485000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000018 DATA=0xffffffff STRB=1111
+[WRITE] ADDR=0x00000018 DATA=0xffffffff STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000018 RESP=SLVERR
+
+------------------------------------------------------------
+[10] INVALID ADDRESS
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 515000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000020 DATA=0xbadc0ffe STRB=1111
+[WRITE] ADDR=0x00000020 DATA=0xbadc0ffe STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000020 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 545000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000020
+[READ ] ADDR=0x00000020
+[READ ] DATA=0x00000000 RRESP=SLVERR
+[PASS]  READ  ADDR=0x00000020 DATA=0x00000000 RESP=SLVERR
+
+------------------------------------------------------------
+[11] MISALIGNED ADDRESS
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 575000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x00000002 DATA=0xbadc0ffe STRB=1111
+[WRITE] ADDR=0x00000002 DATA=0xbadc0ffe STRB=1111
+[WRITE] BRESP=SLVERR
+[PASS]  WRITE ADDR=0x00000002 RESP=SLVERR
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 605000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x00000002
+[READ ] ADDR=0x00000002
+[READ ] DATA=0x00000000 RRESP=SLVERR
+[PASS]  READ  ADDR=0x00000002 DATA=0x00000000 RESP=SLVERR
+
+
+============================================================
+              AXI4-LITE WSTRB TEST (PHASE 2)
+============================================================
+
+------------------------------------------------------------
+[12] WSTRB INIT (0x11223344)
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 635000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 665000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x11223344 RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x11223344 RESP=  OKAY
+
+------------------------------------------------------------
+[13] WSTRB = 4'b0001
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 695000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0xffffffaa STRB=0001
+[WRITE] ADDR=0x0000001c DATA=0xffffffaa STRB=0001
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 725000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x112233aa RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x112233aa RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 755000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+------------------------------------------------------------
+[14] WSTRB = 4'b0010
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 785000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0xffffbbff STRB=0010
+[WRITE] ADDR=0x0000001c DATA=0xffffbbff STRB=0010
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 815000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x1122bb44 RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x1122bb44 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 845000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+------------------------------------------------------------
+[15] WSTRB = 4'b0100
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 875000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0xffccffff STRB=0100
+[WRITE] ADDR=0x0000001c DATA=0xffccffff STRB=0100
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 905000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+[READ ] ADDR=0x0000001c
+[READ ] DATA=0x11cc3344 RRESP=OKAY
+[PASS]  READ  ADDR=0x0000001c DATA=0x11cc3344 RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 935000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] ADDR=0x0000001c DATA=0x11223344 STRB=1111
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+------------------------------------------------------------
+[16] WSTRB = 4'b1000
+------------------------------------------------------------
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(46) @ 965000: uvm_test_top.env.agent.driver [DRIVER] Driving WRITE: ADDR=0x0000001c DATA=0xddffffff STRB=1000
+[WRITE] ADDR=0x0000001c DATA=0xddffffff STRB=1000
+[WRITE] BRESP=OKAY
+[PASS]  WRITE ADDR=0x0000001c RESP=  OKAY
+
+UVM_INFO ../../../../../../Downloads/AXI_Project/sv_files/axi4lite_driver.sv(57) @ 995000: uvm_test_top.env.agent.driver [DRIVER] Driving READ: ADDR=0x0000001c
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:01:27 . Memory (MB): peak = 1796.031 ; gain = 0.000
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE UVM VERIFICATION
+              PHASE 5 FUNCTIONAL COVERAGE
+============================================================
+
+Transactions : 1000
+
+------------------------------------------------------------
+                    REGRESSION RUNNING
+------------------------------------------------------------
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 131275000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+------------------------------------------------------------
+                  REGRESSION SUMMARY
+------------------------------------------------------------
+
+Total Transactions : 1000
+Passed             : 1000
+Failed             : 0
+
+UVM Errors         : 0
+UVM Warnings       : 0
+UVM Fatals         : 0
+
+Functional Coverage: 88.89%
+
+============================================================
+RESULT: PASS
+============================================================
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 131275000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    6
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CLEAN]     2
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 131275 ns : File "C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+
+run all
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi4lite_test...
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+============================================================
+              AXI4-LITE UVM VERIFICATION
+              PHASE 5 FUNCTIONAL COVERAGE
+============================================================
+
+Transactions : 1000
+
+------------------------------------------------------------
+                    REGRESSION RUNNING
+------------------------------------------------------------
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 131275000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+------------------------------------------------------------
+                  COVERAGE BREAKDOWN
+------------------------------------------------------------
+  cp_op               : 100.00%
+  cp_addr_type        : 100.00%
+  cp_reg_type         : 100.00%
+  cp_wstrb_exact      : 100.00%
+  cp_wstrb_categories : 100.00%
+  cp_write_order      : 100.00%
+  cp_bready_bp        : 100.00%
+  cp_rready_bp        : 100.00%
+  cp_resp             : 100.00%
+  cp_write_ro_err     : 100.00%
+  cp_write_inv_err    : 100.00%
+  cp_read_inv_err     : 100.00%
+------------------------------------------------------------
+------------------------------------------------------------
+                  REGRESSION SUMMARY
+------------------------------------------------------------
+
+Total Transactions : 1000
+Passed             : 1000
+Failed             : 0
+
+UVM Errors         : 0
+UVM Warnings       : 0
+UVM Fatals         : 0
+
+Functional Coverage: 100.00%
+
+============================================================
+RESULT: PASS
+============================================================
+
+UVM_INFO C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 131275000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    7
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CLEAN]     3
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 131275 ns : File "C:/AMDDesignTools/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699

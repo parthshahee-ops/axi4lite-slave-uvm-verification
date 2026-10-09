@@ -1,9 +1,7 @@
 `timescale 1ns / 1ps
-//==========================================================================
 // READ PATH
 // Read flow: AR handshake -> capture ARADDR -> decode -> RDATA/RRESP -> RVALID. 
 // One outstanding read: ARREADY is high only in RD_IDLE.
-//==========================================================================
 module axi4lite_read #(
     parameter ADDR_WIDTH = 32
 )(
