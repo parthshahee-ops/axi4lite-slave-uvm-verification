@@ -1,96 +1,39 @@
 # AXI4-Lite Slave Verification using SystemVerilog & UVM
 
-A learning and verification project focused on designing a memory-mapped AXI4-Lite slave and verifying its behavior using SystemVerilog, UVM, assertions, constrained-random stimulus, and coverage analysis.
+A 32-bit AXI4-Lite slave and UVM-based verification project developed and simulated in AMD/Xilinx Vivado Simulator (XSim).
 
-> **Project status:** In development. Planned features and results in this README are goals, not claims of completed verification. This README will be updated as implementation and testing progress.
+## Verified from the supplied simulation records
 
-## Objectives
+The latest recorded `run all` regression reports:
 
-- Implement a 32-bit AXI4-Lite slave with a memory-mapped register bank.
-- Handle the five independent AXI4-Lite channels: AW, W, B, AR, and R.
-- Support byte-strobe (`WSTRB`) writes and correct `VALID`/`READY` handshaking.
-- Build a reusable UVM testbench with sequences, sequencer, driver, monitor, agent, scoreboard, environment, and tests.
-- Exercise channel ordering, backpressure, reset behavior, and invalid/read-only accesses.
-- Add SystemVerilog Assertions (SVA), functional coverage, and regression testing.
+- 1,000 transactions; 1,000 passed; 0 failed.
+- 0 UVM errors, warnings, or fatals in the regression summary.
+- 100.00% reported **functional coverage** for the project's listed coverpoints.
+- The simulator log shows successful writes and read-backs, `OKAY` responses for mapped accesses, `SLVERR` for tested read-only writes, invalid addresses and an unaligned address, and byte-lane updates for several WSTRB patterns.
 
-## Planned Scope
+See [`results/RESULTS.md`](results/RESULTS.md) for the detailed evidence and limitations. These are functional-coverage results reported by the testbench, not code-coverage results.
 
-| Item | Planned configuration |
-|---|---|
-| Protocol | AXI4-Lite |
-| Address width | 32 bits |
-| Data width | 32 bits |
-| Outstanding transactions | One write and one read |
-| Response behavior | `OKAY` and `SLVERR` |
-| Verification | SystemVerilog, UVM, SVA, simulation and coverage |
+## Tools indicated by the logs
 
-The final register map, reset behavior, supported simulator, and test results will be documented after they are confirmed against the implementation.
+- AMD/Xilinx Vivado 2026.1
+- XSim behavioral simulator
+- UVM 1.2
+- Simulation top: `tb_top`
 
-## Verification Focus
+## RTL / testbench structure observed in the compile log
 
-- Basic reset, register reads, writes, and read-back
-- Independent AW and W channel ordering (AW first, W first, and simultaneous)
-- Full, partial, sparse, and zero `WSTRB` values
-- Backpressure on write and read responses
-- Invalid addresses and writes to read-only registers
-- VALID/payload stability while waiting for READY
-- Reset scenarios and randomized regression
-- Functional coverage and coverage-gap analysis
+The compile log names these modules: `axi4lite_write`, `axi4lite_read`, `axi4lite_reg_bank`, `axi4lite_slave_top`, and `tb_top`. It also identifies `axi4lite_if.sv`, `tb_top.sv`, `axi4lite_test.sv`, `axi4lite_driver.sv`, and `axi4lite_sequence.sv` in compile/runtime messages.
 
-## Repository Layout
+**Important:** This ZIP is a documentation-and-results overlay, not a source-code archive. The uploaded material included simulation logs and phase notes, but not the actual `.v` / `.sv` source files. Those source files must be copied from the Vivado project into `rtl/` and `tb/` before this repository can be independently rebuilt. See [`docs/SOURCE_IMPORT_CHECKLIST.md`](docs/SOURCE_IMPORT_CHECKLIST.md).
 
-```text
-.
-├── rtl/                   # AXI4-Lite slave RTL
-├── tb/
-│   ├── sv/                # Basic SystemVerilog testbench
-│   └── uvm/               # UVM environment and components
-│       ├── sequences/
-│       └── tests/
-├── assertions/            # SystemVerilog Assertions
-├── sim/
-│   ├── scripts/           # Simulator scripts and run instructions
-│   ├── logs/              # Selected text logs (avoid generated clutter)
-│   └── waves/              # Optional waveform files; large files may be excluded
-├── coverage/              # Coverage reports and summaries
-├── docs/                  # Design notes, verification plan, register map
-└── results/
-    ├── screenshots/       # Simulation and coverage screenshots
-    └── waveforms/         # Exported waveform images
-```
+## Repository layout
 
-## Current Status
+- `rtl/` — place the actual synthesizable Verilog source files here.
+- `tb/uvm/` — place the actual UVM classes here.
+- `docs/` — phase notes, build information and source-import checklist.
+- `results/` — summarized results from the supplied simulation log.
+- `sim/logs/` — sanitized XSim log record.
 
-- [ ] RTL implementation completed and reviewed
-- [ ] Basic SystemVerilog smoke test passes
-- [ ] UVM components integrated
-- [ ] Directed tests pass
-- [ ] Constrained-random tests run reproducibly
-- [ ] Protocol assertions enabled and checked
-- [ ] Functional coverage reviewed
-- [ ] Regression results documented
-- [ ] Final screenshots and waveforms added
+## Reproduce the simulation
 
-Check items only when supported by actual code and simulation evidence.
-
-## Getting Started
-
-This repository is currently a project scaffold. Add the RTL and testbench sources as they are implemented. Simulator commands will be documented in [`docs/BUILD_AND_RUN.md`](docs/BUILD_AND_RUN.md) once the simulator and project setup are finalized.
-
-## Documentation
-
-- [Project plan and verification checklist](docs/PROJECT_PLAN.md)
-- [Build and run notes](docs/BUILD_AND_RUN.md)
-- [Results template](results/RESULTS_TEMPLATE.md)
-
-## Results
-
-Simulation outcomes, pass/fail summaries, coverage percentages, and screenshots will be added after the corresponding runs have actually been completed. No coverage or pass-rate figures are claimed at this stage.
-
-## Tools
-
-Planned: SystemVerilog, UVM, and a simulator that supports the required UVM/SVA features. The exact tool/version will be recorded after it is confirmed.
-
-## License
-
-A license has not yet been selected. Add a license file before presenting the repository as open source.
+Open the original Vivado project and run behavioral simulation with `tb_top` as the simulation top. Exact compile scripts, project files and the source tree were not included in the uploaded logs, so this repository does not yet provide a standalone command-line reproduction flow.

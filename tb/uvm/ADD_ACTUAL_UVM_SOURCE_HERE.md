@@ -1,0 +1,1 @@
+Copy the actual UVM/SystemVerilog files from the Vivado simulation fileset into this folder and its subfolders. The supplied log identifies some filenames but does not contain their source text. See ../../docs/SOURCE_IMPORT_CHECKLIST.md.
