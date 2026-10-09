@@ -1,1 +1,0 @@
-Copy the actual Verilog source files from Vivado Design Sources here. No RTL source text was included in the uploaded log records, so this bundle does not fabricate design code. See ../docs/SOURCE_IMPORT_CHECKLIST.md.
