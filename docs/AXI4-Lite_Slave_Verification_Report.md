@@ -1,5 +1,4 @@
 # AXI4-Lite Slave Verification using SystemVerilog & UVM
----
 
 ## Table of Contents
 
