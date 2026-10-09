@@ -25,10 +25,8 @@ axi4lite-slave-uvm-verification/
 │   ├── axi4lite_scoreboard.sv
 │   └── axi4lite_test.sv
 ├── docs/
-│   ├── AXI-4_Lite_Project_Notes.docx
 │   ├── AXI4-Lite_Slave_Verification_Report.md
-│   ├── gemini_review.md
-│   └── chatgpt_review.md
+│   └── Overview.md
 └── results/
     ├── logs.txt
     └── waveform screenshots
