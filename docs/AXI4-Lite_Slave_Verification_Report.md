@@ -1,16 +1,4 @@
 # AXI4-Lite Slave Verification using SystemVerilog & UVM
-
-**Project Report**
-
-|  |  |
-| --- | --- |
-| **Author** | *\[Your Name\]* |
-| **Institution / Organization** | *\[Your College / Company\]* |
-| **Date** | *\[DD Month YYYY\]* |
-| **Tools** | *\[Simulator, e.g., QuestaSim / VCS / Xcelium\]*, SystemVerilog, UVM 1.2 |
-
-> **How to use this template:** Sections marked `[TBD]` or `_[...]_` need your actual data (register offsets, simulation results, coverage numbers, waveforms). Everything else is drafted from your project notes.
-
 ---
 
 ## Table of Contents
